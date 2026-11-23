@@ -21,6 +21,11 @@ WASP is an audit aid, not proof that a target is secure. Use it only on systems 
 
 - Go 1.25.0 or newer.
 
+## Screenshots
+<p align="center">
+  <img src="wasp-screenshot1.png" width="360">
+</p>
+
 ## Build and run
 
 ```bash
