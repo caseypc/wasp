@@ -1,0 +1,15 @@
+# Example only. Active execution requires an explicit authorized profile + scope.
+profile: active
+authorization:
+  acknowledged: false # Must be consciously changed for authorized activity
+scope:
+  include_hosts: [example.com]
+  include_subdomains: false
+  allowed_schemes: [https]
+  allowed_ports: [443]
+  follow_in_scope_redirects: false
+active:
+  allowed_ports: [443]
+  max_hosts: 1
+  max_connections: 10
+  max_packets_per_second: 2

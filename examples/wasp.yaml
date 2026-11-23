@@ -1,0 +1,33 @@
+schema_version: "1"
+profile: passive
+target:
+  url: https://example.com
+scope:
+  include_hosts:
+    - example.com
+  include_subdomains: false
+  allowed_schemes: [https]
+  allowed_ports: [443]
+  follow_in_scope_redirects: true
+modules: [tls, http, dns, email, domain, network]
+limits:
+  concurrency: 4
+  total_timeout: 30s
+  request_timeout: 8s
+  max_requests: 50
+  max_redirects: 3
+  max_response_bytes: 1048576
+policy:
+  id: default-v1
+  minimum_score_coverage: 0.80
+  cert_expiry_warning_days: 30
+  fail_on: high
+email:
+  dkim_selectors: []
+providers:
+  geoip: disabled
+  asn: disabled
+  rdap: enabled
+report:
+  format: terminal
+  redact_sensitive: true
